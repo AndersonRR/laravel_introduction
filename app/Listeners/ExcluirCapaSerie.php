@@ -3,9 +3,10 @@
 namespace App\Listeners;
 
 use App\Events\SerieApagada;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Storage;
 
-class ExcluirCapaSerie
+class ExcluirCapaSerie implements ShouldQueue
 {
     /**
      * Create the event listener.

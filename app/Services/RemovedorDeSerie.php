@@ -14,11 +14,12 @@ class RemovedorDeSerie
 
         DB::transaction(function () use ($serieId, &$nomeSerie) {
             $serie = Serie::find($serieId);
+            $serieobj= (object) $serie->toArray();
             $nomeSerie = $serie->nome;
             $this->removerTemporadas($serie);
             $serie->delete();
 
-            $evento = new SerieApagada($serie);
+            $evento = new SerieApagada($serieobj);
             event($evento);
         });
 
