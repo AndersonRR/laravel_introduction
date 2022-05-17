@@ -18,9 +18,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        \App\Events\SerieApagada::class => [
-            \App\Listeners\ExcluirCapaSerie::class
-        ]
+        // \App\Events\SerieApagada::class => [
+        //     \App\Listeners\ExcluirCapaSerie::class
+        // ]
     ];
 
     /**
